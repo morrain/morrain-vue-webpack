@@ -1,0 +1,23 @@
+{
+  "name": "morrain-vue-webpack",
+  "version": "1.0.0",
+  "description": "learning how to use webpack ",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morrain/morrain-vue-webpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "vue"
+  ],
+  "author": "626100676@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morrain/morrain-vue-webpack/issues"
+  },
+  "homepage": "https://github.com/morrain/morrain-vue-webpack#readme"
+}
