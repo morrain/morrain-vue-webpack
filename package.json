@@ -4,7 +4,8 @@
   "description": "learning how to use webpack ",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build/build.js",
+    "debug:build": "node --inspect-brk=5858 build/build.js"
   },
   "repository": {
     "type": "git",
@@ -14,10 +15,19 @@
     "webpack",
     "vue"
   ],
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
   "author": "626100676@qq.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/morrain/morrain-vue-webpack/issues"
   },
-  "homepage": "https://github.com/morrain/morrain-vue-webpack#readme"
+  "homepage": "https://github.com/morrain/morrain-vue-webpack#readme",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "semver": "^6.0.0",
+    "shelljs": "^0.8.3"
+  }
 }
