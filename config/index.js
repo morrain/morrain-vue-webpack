@@ -4,6 +4,9 @@ module.exports = {
     dev: {
         // https://webpack.js.org/configuration/devtool/#development
         devtool: 'cheap-module-eval-source-map',
+
+        //path
+        assetsPublicPath: '/'
     },
     build: {
         index: path.resolve(__dirname, '../dist/index.html'),
