@@ -17,6 +17,9 @@ module.exports = {
             : config.dev.assetsPublicPath
 
     },
+    devtool: process.env.NODE_ENV === 'production'
+        ? (config.build.productionSourceMap ? config.build.devtool : false)
+        : config.dev.devtool,
     resolve: {
         extensions: ['.js', '.vue', '.json'],//加上.vue后，表示import .vue文件时不需要加后缀
         alias: {
