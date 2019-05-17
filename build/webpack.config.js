@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const config = require('../config');
 
 module.exports = {
     entry: {
@@ -9,7 +10,13 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],//加上.vue后，表示import .vue文件时不需要加后缀
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'   //https://www.webpackjs.com/configuration/resolve/#resolve-alias      https://cn.vuejs.org/v2/guide/installation.html
+        }
     },
     module: {
         rules: [
@@ -31,7 +38,9 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Output Management by HtmlWebpckPlugin'
+            filename: config.build.index,
+            template: 'index.html',
+            inject: true,
         })
     ]
 };
