@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "node build/build.js",
-    "debug:build": "node --inspect-brk=5858 build/build.js"
+    "debug:build": "node --inspect-brk=5858 build/build.js",
+    "start": "npx webpack"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,11 @@
   "devDependencies": {
     "chalk": "^2.4.2",
     "semver": "^6.0.0",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.3",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
   }
 }
