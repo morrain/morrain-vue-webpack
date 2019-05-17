@@ -10,8 +10,12 @@ module.exports = {
         app: './src/index.js'
     },
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, '../dist')
+        filename: '[name].[chunkhash].js',
+        path: config.build.assetsRoot,
+        publicPath: process.env.NODE_ENV === 'production'
+            ? config.build.assetsPublicPath
+            : config.dev.assetsPublicPath
+
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],//加上.vue后，表示import .vue文件时不需要加后缀

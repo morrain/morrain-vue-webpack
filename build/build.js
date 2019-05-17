@@ -3,10 +3,12 @@
 //执行构建之前先检查node以及npm的版本
 require('./check-versions')();
 
+process.env.NODE_ENV = 'production';
+
 const ora = require('ora')
 const chalk = require('chalk')
 const webpack = require('webpack')
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./webpack.prod.config.js');
 
 const spinner = ora('building for production...')
 spinner.start()
