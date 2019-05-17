@@ -3,10 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const config = require('../config');
 
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
     entry: {
-        app: './src/index.js',
-        print: './src/print.js'
+        app: './src/index.js'
     },
     output: {
         filename: '[name].bundle.js',
@@ -21,10 +22,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.vue$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    'vue-loader'
                 ]
             },
             {
@@ -36,7 +36,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new VueLoaderPlugin(),
+        new CleanWebpackPlugin(),        
         new HtmlWebpackPlugin({
             filename: config.build.index,
             template: 'index.html',

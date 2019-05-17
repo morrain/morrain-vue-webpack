@@ -1,15 +1,11 @@
-import './style.css';
 
 import Vue from "vue";
 
-//导入图片
-import Icon from './assets/logo.png';
-
-import printMe from './print';
+import App from "./App";
 
 new Vue({
     el: '#app',
-    data: {
-        message: 'hello webpack'
-    }
-})
+    components: { App },
+    template: '<App/>'
+  })
+  
