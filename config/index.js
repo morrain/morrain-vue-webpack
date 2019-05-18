@@ -6,7 +6,14 @@ module.exports = {
         devtool: 'cheap-module-eval-source-map',
 
         //path
-        assetsPublicPath: '/'
+        assetsPublicPath: '/',
+
+        autoOpenBrowser: true,//是否自动打开浏览器窗口
+        host: 'localhost',//可修改为本地IP
+        port: 8080,
+        proxyTable: {},
+        poll: false, //https://www.webpackjs.com/configuration/watch/#watchoptions
+
     },
     build: {
         index: path.resolve(__dirname, '../dist/index.html'),

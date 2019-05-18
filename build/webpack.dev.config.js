@@ -5,10 +5,36 @@ const webpackBaseConfig = require('./webpack.base.config');
 const webpack = require('webpack');
 const path = require('path');
 
+const config = require('../config');
+
+const HOST = process.env.HOST
+const PORT = process.env.PORT && Number(process.env.PORT)
+
 const webpackConfig = merge(webpackBaseConfig, {
+    output: {
+        filename: '[name].[hash].js'
+    },
     devServer: {
+        clientLogLevel: 'warning',  //https://www.webpackjs.com/configuration/dev-server/#devserver-clientloglevel
+        historyApiFallback: true,   //https://www.webpackjs.com/configuration/dev-server/#devserver-historyapifallback
+        hot: true,                  //https://www.webpackjs.com/configuration/dev-server/#devserver-hot
+        compress: true,             //https://www.webpackjs.com/configuration/dev-server/#devserver-compress
+        open: config.dev.autoOpenBrowser, //是否自动打开浏览器
+        overlay: {                  //https://webpack.docschina.org/configuration/dev-server/#devserver-overlay
+            warnings: true,
+            errors: true
+        },
         contentBase: path.resolve(__dirname, '../dist'),
-        port: 9000
+        host: HOST || config.dev.host,
+        port: PORT || config.dev.port,
+        publicPath: config.dev.assetsPublicPath,
+        proxy: config.dev.proxyTable,     // https://www.webpackjs.com/configuration/dev-server/#devserver-proxy
+        quiet: true,                      // https://www.webpackjs.com/configuration/dev-server/#devserver-quiet
+        watchOptions: {                   // https://www.webpackjs.com/configuration/watch/#watchoptions
+            aggregateTimeout: 500,
+            poll: config.dev.poll,
+            ignored: '/node_modules'
+        }
     },
     plugins: [
         new webpack.DefinePlugin({

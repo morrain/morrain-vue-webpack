@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.config.js",
+    "debug:dev": "node --inspect-brk=5859 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config build/webpack.dev.config.js",
     "build": "node build/build.js",
     "debug:build": "node --inspect-brk=5858 build/build.js",
     "start": "npx webpack --config webpack.prod.config.js"
