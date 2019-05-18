@@ -6,13 +6,14 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = require('../config');
+const utils = require('./utils');
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 const webpackConfig = merge(webpackBaseConfig, {
     output: {
-        filename: '[name].[hash].js'
+        filename: utils.assetsPath('js/[name].[hash].js')
     },
     devServer: {
         clientLogLevel: 'warning',  //https://www.webpackjs.com/configuration/dev-server/#devserver-clientloglevel

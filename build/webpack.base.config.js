@@ -10,7 +10,6 @@ module.exports = {
         app: './src/index.js'
     },
     output: {
-        filename: '[name].[chunkhash].js',
         path: config.build.assetsRoot,
         publicPath: process.env.NODE_ENV === 'production'
             ? config.build.assetsPublicPath
