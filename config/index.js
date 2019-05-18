@@ -19,8 +19,8 @@ module.exports = {
     },
     build: {
         index: path.resolve(__dirname, '../dist/index.html'),
-        
-        productionSourceMap: true,//生产环境是否需要开启sourceMap。生产环境因为又分为测试、预发、线上等，到时根据构建命令来配置此参数
+
+        productionSourceMap: false,//生产环境是否需要开启sourceMap。生产环境因为又分为测试、预发、线上等，到时根据构建命令来配置此参数
 
         // https://webpack.js.org/configuration/devtool/#production
         devtool: '#source-map',
