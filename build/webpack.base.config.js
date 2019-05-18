@@ -36,6 +36,11 @@ module.exports = {
                 ]
             },
             {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                include: [path.resolve(__dirname, '../src')]
+            },
+            {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
