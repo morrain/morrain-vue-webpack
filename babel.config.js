@@ -5,7 +5,8 @@ module.exports = function (api) {
         [
             "@babel/env",
             {
-                debug: true
+                debug: true,
+                useBuiltIns: 'usage'
             }
         ]
     ];
