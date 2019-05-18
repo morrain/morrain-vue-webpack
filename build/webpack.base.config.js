@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const config = require('../config');
+const utils = require('./utils');
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
@@ -37,7 +38,13 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            name: utils.assetsPath('img/[name].[hash:7].[ext]')
+                        }
+                    }
                 ]
             },
             // 它会应用到普通的 `.css` 文件
