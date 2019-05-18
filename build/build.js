@@ -18,6 +18,15 @@ webpack(webpackConfig, (err, stats) => {
     if (err) throw err;
 
     if (stats.hasErrors()) {
+        
+        console.log(stats.toString({
+            colors: true,
+            modules: false,
+            children: false, // If you are using ts-loader, setting this to true will make TypeScript errors show up during build.
+            chunks: false,
+            chunkModules: false
+        }) + '\n\n');
+
         console.log(chalk.red('  Build failed with errors.\n'))
         process.exit(1)
     }
