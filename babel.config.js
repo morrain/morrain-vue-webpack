@@ -5,12 +5,18 @@ module.exports = function (api) {
         [
             "@babel/env",
             {
-                debug: true,
-                useBuiltIns: 'usage'
+                debug: true
             }
         ]
     ];
-    const plugins = [];
+    const plugins = [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                corejs: 2
+            }
+        ]
+    ];
 
     return {
         presets,
