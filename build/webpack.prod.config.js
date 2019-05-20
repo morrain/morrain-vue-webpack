@@ -14,16 +14,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpackConfig = merge(webpackBaseConfig, {
     module: {
-        rules: [
-            // 它会应用到普通的 `.css` 文件
-            // 以及 `.vue` 文件中的 `<style>` 块
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
-                ]
-            }]
+        rules: utils.styleLoaders({
+            sourceMap: config.build.productionSourceMap,
+            extract: true
+        })
     },
     output: {
         filename: utils.assetsPath('js/[name].[chunkhash].js'),

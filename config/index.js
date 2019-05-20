@@ -16,6 +16,8 @@ module.exports = {
         proxyTable: {},
         poll: false, //https://www.webpackjs.com/configuration/watch/#watchoptions
 
+        cssSourceMap: true
+
     },
     build: {
         index: path.resolve(__dirname, '../dist/index.html'),

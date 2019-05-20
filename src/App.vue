@@ -2,14 +2,16 @@
   <div id="app">
     <img src="./assets/logo.png">
     <HelloWorld/>
+    <StyleTest/>
   </div>
 </template>
 
 <script>
 import HelloWorld from "@/components/HelloWorld";
+import StyleTest from "@/components/StyleTest";
 export default {
   name: "App",
-  components: { HelloWorld }
+  components: { HelloWorld, StyleTest }
 };
 </script>
 
