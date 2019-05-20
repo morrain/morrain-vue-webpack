@@ -25,3 +25,36 @@ HelloWorldPlugins.prototype.apply = function (compiler) {
 }
 
 exports.HelloWorldPlugins = HelloWorldPlugins;
+
+
+function FileList(options) {
+
+}
+
+FileList.prototype.apply = function (compiler) {
+
+    compiler.plugin('emit', function (compilation, callback) {
+
+        var filelist = 'In this build: \n\n';
+
+        // 遍历所有编译过的资源文件，
+        // 对于每个文件名称，都添加一行内容。
+        for (var filename in compilation.assets) {
+            filelist += ('- ' + filename + '\n');
+        }
+
+        // 将这个列表作为一个新的文件资源，插入到 webpack 构建中：
+        compilation.assets['filelist.md'] = {
+            source: function () {
+                return filelist;
+            },
+            size: function () {
+                return filelist.length;
+            }
+        };
+
+        callback();
+    });
+}
+
+exports.FileList = FileList;

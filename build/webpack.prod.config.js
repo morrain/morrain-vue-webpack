@@ -24,7 +24,8 @@ const webpackConfig = merge(webpackBaseConfig, {
         new customPlugins.HelloWorldPlugins({
             param1: 'bac',
             param2: 'abc'
-        })
+        }),
+        new customPlugins.FileList()
     ]
 });
 
