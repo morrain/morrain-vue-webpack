@@ -8,6 +8,8 @@ const webpackBaseConfig = require('./webpack.base.config');
 const utils = require('./utils');
 const config = require('../config');
 
+const customPlugins = require('./webpack.custom.plugins');
+
 
 const webpackConfig = merge(webpackBaseConfig, {
     output: {
@@ -18,6 +20,10 @@ const webpackConfig = merge(webpackBaseConfig, {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('dev')
+        }),
+        new customPlugins.HelloWorldPlugins({
+            param1: 'bac',
+            param2: 'abc'
         })
     ]
 });
