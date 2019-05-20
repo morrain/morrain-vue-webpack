@@ -39,6 +39,18 @@ const webpackConfig = merge(webpackBaseConfig, {
             ignored: '/node_modules'
         }
     },
+    module: {
+        rules: [
+            // 它会应用到普通的 `.css` 文件
+            // 以及 `.vue` 文件中的 `<style>` 块
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader'
+                ]
+            }]
+    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('prod')

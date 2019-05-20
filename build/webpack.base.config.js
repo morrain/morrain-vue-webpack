@@ -56,16 +56,6 @@ module.exports = {
                     limit: 10000,
                     name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
                 }
-            },
-
-            // 它会应用到普通的 `.css` 文件
-            // 以及 `.vue` 文件中的 `<style>` 块
-            {
-                test: /\.css$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader'
-                ]
             }
         ]
     },
