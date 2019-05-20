@@ -13,8 +13,10 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const webpackConfig = merge(webpackBaseConfig, {
     output: {
-        filename: utils.assetsPath('js/[name].[hash].js')
+        filename: utils.assetsPath('js/[name].[hash].js'),
+        publicPath: config.dev.assetsPublicPath
     },
+    devtool: config.dev.devtool,
     devServer: {
         clientLogLevel: 'warning',  //https://www.webpackjs.com/configuration/dev-server/#devserver-clientloglevel
         historyApiFallback: true,   //https://www.webpackjs.com/configuration/dev-server/#devserver-historyapifallback

@@ -6,12 +6,15 @@ const webpack = require('webpack');
 
 const webpackBaseConfig = require('./webpack.base.config');
 const utils = require('./utils');
+const config = require('../config');
 
 
 const webpackConfig = merge(webpackBaseConfig, {
     output: {
-        filename: utils.assetsPath('js/[name].[chunkhash].js')
+        filename: utils.assetsPath('js/[name].[chunkhash].js'),
+        publicPath: config.build.assetsPublicPath
     },
+    devtool: config.build.productionSourceMap ? config.build.devtool : false,
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('dev')
