@@ -62,7 +62,7 @@ exports.styleLoaders = function (options) {
     const loaders = cssLoaders(options);
 
     return Object.keys(loaders).map(key => ({
-        test: new RegExp(`\.${key}$`),
+        test: new RegExp(`\\.${key}$`),
         use: loaders[key]
     }));
 

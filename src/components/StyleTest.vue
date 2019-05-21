@@ -1,6 +1,12 @@
 <template>
-  <div class="less">
-    <div>less test</div>
+  <div id="wrapper">
+    <div class="less">
+      <div>less test</div>
+    </div>
+
+    <div class="scss">
+      <div class="scss-child">scss test</div>
+    </div>
   </div>
 </template>
 
@@ -28,6 +34,20 @@ export default {
   margin: 0 auto;
   div {
     .box-shadow(0 0 5px, 30%);
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+.scss {
+  padding: 2px;
+
+  width: 30%;
+  margin: 10px auto;
+
+  div {
+    color: red;
+    background-color: yellowgreen;
   }
 }
 </style>
