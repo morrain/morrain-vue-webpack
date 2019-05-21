@@ -11,6 +11,10 @@
     <div class="sass">
       <div class="sass-child">sass test</div>
     </div>
+
+    <div class="postcss">
+      <div>postcss test</div>
+    </div>
   </div>
 </template>
 
@@ -62,5 +66,17 @@ export default {
   margin: 0 auto
   padding: 10px
   background-color: #faa
+</style>
+
+<style lang="scss" scoped>
+.postcss {
+  display: flex;
+  justify-content: center;
+  div {
+    width: 30%;
+    background-color: yellow;
+    margin: 20px;
+  }
+}
 </style>
 
