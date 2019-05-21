@@ -7,6 +7,10 @@
     <div class="scss">
       <div class="scss-child">scss test</div>
     </div>
+
+    <div class="sass">
+      <div class="sass-child">sass test</div>
+    </div>
   </div>
 </template>
 
@@ -51,3 +55,12 @@ export default {
   }
 }
 </style>
+
+<style lang="sass" scoped>
+.sass
+  width: 30%
+  margin: 0 auto
+  padding: 10px
+  background-color: #faa
+</style>
+
