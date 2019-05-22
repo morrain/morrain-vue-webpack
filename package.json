@@ -4,8 +4,8 @@
   "description": "learning how to use webpack ",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.dev.config.js",
-    "debug:dev": "node --inspect-brk=5859 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config build/webpack.dev.config.js",
+    "dev": "node build/dev-server.js",
+    "debug:dev": "node --inspect-brk=5859 build/dev-server.js",
     "build": "node build/build.js",
     "debug:build": "node --inspect-brk=5858 build/build.js",
     "build:test": "node build/build.js --env test",

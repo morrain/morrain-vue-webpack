@@ -1,3 +1,6 @@
+'use strict'
+
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -7,6 +10,7 @@ const utils = require('./utils');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+    mode: process.env.NODE_ENV,
     entry: {
         app: './src/index.js'
     },

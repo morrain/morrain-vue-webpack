@@ -2,7 +2,6 @@
 
 const merge = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base.config');
-const webpack = require('webpack');
 const path = require('path');
 
 const config = require('../config');
@@ -43,12 +42,7 @@ const webpackConfig = merge(webpackBaseConfig, {
         rules: utils.styleLoaders({
             sourceMap: config.dev.cssSourceMap
         })
-    },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-        })
-    ]
+    }
 });
 
 module.exports = webpackConfig;
