@@ -29,8 +29,8 @@ const webpackConfig = merge(webpackBaseConfig, {
     devtool: config.build.productionSourceMap ? config.build.devtool : false,
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': process.env.NODE_ENV,
-            'process.env.NODE_ENV_SUB': args.env || 'online'
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            'process.env.NODE_ENV_SUB': JSON.stringify(args.env || 'online')
         }),
         new customPlugins.HelloWorldPlugins({
             param1: 'bac',
