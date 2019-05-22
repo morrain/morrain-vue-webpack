@@ -11,6 +11,8 @@ const config = require('../config');
 const customPlugins = require('./webpack.custom.plugins');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const args = require('yargs').argv;
+
 
 const webpackConfig = merge(webpackBaseConfig, {
     module: {
@@ -27,7 +29,8 @@ const webpackConfig = merge(webpackBaseConfig, {
     devtool: config.build.productionSourceMap ? config.build.devtool : false,
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('dev')
+            'process.env.NODE_ENV': process.env.NODE_ENV,
+            'process.env.NODE_ENV_SUB': args.env || 'online'
         }),
         new customPlugins.HelloWorldPlugins({
             param1: 'bac',
