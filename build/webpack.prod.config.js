@@ -10,6 +10,7 @@ const config = require('../config');
 
 const customPlugins = require('./webpack.custom.plugins');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 
 const webpackConfig = merge(webpackBaseConfig, {
@@ -25,6 +26,9 @@ const webpackConfig = merge(webpackBaseConfig, {
         publicPath: config.build.assetsPublicPath
     },
     devtool: config.build.productionSourceMap ? config.build.devtool : false,
+    optimization: {
+        minimizer: [new OptimizeCSSAssetsPlugin()]
+    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV_SUB': JSON.stringify(config.build.env)
