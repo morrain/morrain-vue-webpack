@@ -11,8 +11,6 @@ const config = require('../config');
 const customPlugins = require('./webpack.custom.plugins');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const args = require('yargs').argv;
-
 
 const webpackConfig = merge(webpackBaseConfig, {
     module: {
@@ -30,7 +28,7 @@ const webpackConfig = merge(webpackBaseConfig, {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-            'process.env.NODE_ENV_SUB': JSON.stringify(args.env || 'online')
+            'process.env.NODE_ENV_SUB': JSON.stringify(config.build.env)
         }),
         new customPlugins.HelloWorldPlugins({
             param1: 'bac',
