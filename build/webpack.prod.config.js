@@ -30,7 +30,8 @@ const webpackConfig = merge(webpackBaseConfig, {
         minimizer: [new OptimizeCSSAssetsPlugin()],
         splitChunks: {
             chunks: 'all'
-        }
+        },
+        runtimeChunk: 'single'
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -43,7 +44,8 @@ const webpackConfig = merge(webpackBaseConfig, {
         new customPlugins.FileList(),
         new MiniCssExtractPlugin({
             filename: utils.assetsPath('css/[name].[contenthash].css')
-        })
+        }),
+        new webpack.HashedModuleIdsPlugin()
     ]
 });
 
