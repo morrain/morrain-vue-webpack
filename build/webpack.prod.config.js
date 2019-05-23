@@ -27,7 +27,10 @@ const webpackConfig = merge(webpackBaseConfig, {
     },
     devtool: config.build.productionSourceMap ? config.build.devtool : false,
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin()]
+        minimizer: [new OptimizeCSSAssetsPlugin()],
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     plugins: [
         new webpack.DefinePlugin({
