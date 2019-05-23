@@ -12,7 +12,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
-        app: './src/index.js'
+        app: './src/index.js',
+        runtime: './src/runtime.js'
     },
     output: {
         path: config.build.assetsRoot
