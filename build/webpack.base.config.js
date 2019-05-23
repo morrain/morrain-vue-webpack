@@ -7,7 +7,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const config = require('../config');
 const utils = require('./utils');
 
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = {
     mode: process.env.NODE_ENV,
@@ -68,6 +70,7 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
+        new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             filename: config.build.index,
             template: 'index.html',
