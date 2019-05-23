@@ -1,3 +1,10 @@
-import { join } from "lodash";
+import Vue from "vue";
 
-console.log(join(['entry1:', 'first entry']));
+import _ from 'lodash';
+
+new Vue({
+    el: '#app',
+    data: {
+        message: _.join(['Hello', 'WebPack!'], '~')
+    }
+})
