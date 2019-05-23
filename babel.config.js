@@ -15,6 +15,9 @@ module.exports = function (api) {
             {
                 corejs: 2
             }
+        ],
+        [
+            "@babel/plugin-syntax-dynamic-import",
         ]
     ];
 
